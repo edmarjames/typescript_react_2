@@ -1,10 +1,20 @@
-import { useState } from 'react'
-import './App.css'
+import { useState } from 'react';
+
+import Button from './components/Button';
+import './App.css';
 
 function App() {
 
   return (
-    <p>Hello</p>
+    <Button
+      backgroundColor='blue'
+      textColor='white'
+      fontSize={40}
+      pillShape
+      padding={[5, 10]}
+    >
+      Click me!
+    </Button>
   )
 }
 
