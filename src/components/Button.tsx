@@ -8,17 +8,21 @@ export default function Button({
   fontSize,
   pillShape,
   padding,
-  children
+  children,
+  setCount,
 }: ButtonProps) {
 
   return (
-    <button style={{
-      backgroundColor: backgroundColor,
-      color: textColor,
-      fontSize: fontSize,
-      borderRadius: pillShape ? '100%' : 0,
-      padding: `${padding[0]} ${padding[1]}`
-    }}>
+    <button
+      style={{
+        backgroundColor: backgroundColor,
+        color: textColor,
+        fontSize: fontSize,
+        borderRadius: pillShape ? '100%' : 0,
+        padding: `${padding[0]} ${padding[1]}`
+      }}
+      onClick={() => setCount((prevCount) => prevCount + 1)}
+    >
       {children}
     </button>
   )

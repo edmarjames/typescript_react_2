@@ -7,6 +7,7 @@ export interface ButtonProps {
   pillShape?: boolean;
   padding: number[];
   children: React.ReactNode;
+  setCount: React.Dispatch<React.SetStateAction<number>>;
 };
 
 // 1. Approach to receive prop types as CSS properties
@@ -53,3 +54,24 @@ export interface ButtonProps {
 // USAGE
   // const icon = <i></i>;
   // <Button>{icon}<Button/>
+
+// 6. Approach to receive attributes of a specific HTML element
+// type ButtonProps = React.ComponentPropsWithoutRef<'button'>;
+
+// USAGE
+  // <Button type='submit' autoFocus><Button/>
+
+// 7. Approach to intersect a type alias
+// type ButtonProps = React.ComponentPropsWithoutRef<'button'> & {
+//   variant?: 'primary' | 'secondary';
+// };
+
+// 8. Approach to extend an interface
+// interface ButtonProps {
+//   type: 'button' | 'submit' | 'reset';
+//   color: 'red' | 'blue' | 'green';
+// };
+
+// interface SuperButtonProps extends ButtonProps {
+//   size: 'md' | 'lg';
+// };
