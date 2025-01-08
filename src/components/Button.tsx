@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { ButtonProps } from '../utils/props';
 
 
@@ -12,19 +12,41 @@ export default function Button({
   setCount,
 }: ButtonProps) {
 
+  const ref = useRef<HTMLButtonElement>(null);
+
+  const handleClick = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+    console.log(event);
+    console.log('clicked');
+    setCount((prevCount) => prevCount + 1);
+  };
+
+  const buttonTextOptions = [
+    'Click me!',
+    'Click me again!',
+    'Click me one more time!'
+  ] as const;
+
   return (
-    <button
-      style={{
-        backgroundColor: backgroundColor,
-        color: textColor,
-        fontSize: fontSize,
-        borderRadius: pillShape ? '100%' : 0,
-        padding: `${padding[0]} ${padding[1]}`
-      }}
-      onClick={() => setCount((prevCount) => prevCount + 1)}
-    >
-      {children}
-    </button>
+    <>
+      <button
+        ref={ref}
+        style={{
+          backgroundColor: backgroundColor,
+          color: textColor,
+          fontSize: fontSize,
+          borderRadius: pillShape ? '100%' : 0,
+          padding: `${padding[0]} ${padding[1]}`
+        }}
+        onClick={handleClick}
+      >
+        {children}
+      </button>
+      <div>
+        {buttonTextOptions.map((item) => (
+          <p>{item}</p>
+        ))}
+      </div>
+    </>
   )
 }
 
