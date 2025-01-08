@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useEffect } from 'react';
 import { ButtonProps } from '../utils/props';
 
 
@@ -20,11 +20,24 @@ export default function Button({
     setCount((prevCount) => prevCount + 1);
   };
 
+  type User = {
+    sessionId: string;
+    name: string;
+  };
+
+  type Guest = Omit<User, 'name'>;
+
+  type ButtonColor = 'red' | 'blue' | 'green';
+
   const buttonTextOptions = [
     'Click me!',
     'Click me again!',
     'Click me one more time!'
   ] as const;
+
+  useEffect(() => {
+    const previousButtonColor = localStorage.getItem('buttonColor') as ButtonColor;
+  }, []);
 
   return (
     <>
@@ -42,8 +55,8 @@ export default function Button({
         {children}
       </button>
       <div>
-        {buttonTextOptions.map((item) => (
-          <p>{item}</p>
+        {buttonTextOptions.map((item, index) => (
+          <p key={index}>{item}</p>
         ))}
       </div>
     </>
