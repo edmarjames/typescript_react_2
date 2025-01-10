@@ -1,7 +1,9 @@
-import { useState } from 'react';
+// react imports
+import { useState }                    from 'react';
 
-import Button from './components/Button';
-import { type User } from './utils/types';
+// internal imports
+import Button                         from './components/Button';
+import { type User }                  from './utils/types';
 import './App.css';
 
 

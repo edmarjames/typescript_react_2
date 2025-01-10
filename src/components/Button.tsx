@@ -1,7 +1,13 @@
-import React, { useRef, useEffect } from 'react';
-import { ButtonProps } from '../utils/props';
-import { buttonTextOptions } from '../utils/constants';
-import { type ButtonColor } from '../utils/types';
+// react imports
+import React, {
+  useEffect,
+  useRef,
+}                                      from 'react';
+
+// internal imports
+import { ButtonProps }                 from '../utils/props';
+import { buttonTextOptions }           from '../utils/constants';
+import { type ButtonColor }            from '../utils/types';
 
 
 export default function Button<T>({
@@ -50,6 +56,7 @@ export default function Button<T>({
   )
 }
 
+// NOTES
 
 // alternative way of providing prop types when using arrow function
 // const Button: React.FC<> = () => {};
