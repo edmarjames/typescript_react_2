@@ -25,6 +25,8 @@ function App() {
         pillShape
         padding={[5, 10]}
         setCount={setCount}
+        countValue={5}
+        countHistory={[1, 2, 4]}
       >
         Click me!
       </Button>

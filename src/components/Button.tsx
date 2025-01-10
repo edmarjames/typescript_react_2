@@ -4,7 +4,7 @@ import { ButtonProps } from '../utils/props';
 import { buttonTextOptions } from '../utils/constants';
 
 
-export default function Button({
+export default function Button<T>({
   backgroundColor,
   textColor,
   fontSize,
@@ -12,7 +12,7 @@ export default function Button({
   padding,
   children,
   setCount,
-}: ButtonProps) {
+}: ButtonProps<T>) {
 
   const ref = useRef<HTMLButtonElement>(null);
 

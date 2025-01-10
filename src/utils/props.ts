@@ -1,6 +1,6 @@
 type Color = 'red' | 'blue' | 'green' | 'white';
 
-export interface ButtonProps {
+export interface ButtonProps<T> {
   backgroundColor: Color;
   textColor: Color;
   fontSize: number;
@@ -8,6 +8,8 @@ export interface ButtonProps {
   padding: number[];
   children: React.ReactNode;
   setCount: React.Dispatch<React.SetStateAction<number>>;
+  countValue?: T;
+  countHistory?: T[];
 };
 
 // 1. Approach to receive prop types as CSS properties
