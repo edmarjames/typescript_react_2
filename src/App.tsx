@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 import Button from './components/Button';
-import { User } from './utils/types';
+import { type User } from './utils/types';
 import './App.css';
 
 

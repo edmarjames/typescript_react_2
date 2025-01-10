@@ -1,7 +1,7 @@
 import React, { useRef, useEffect } from 'react';
-import { ButtonColor } from '../utils/types';
 import { ButtonProps } from '../utils/props';
 import { buttonTextOptions } from '../utils/constants';
+import { type ButtonColor } from '../utils/types';
 
 
 export default function Button<T>({
