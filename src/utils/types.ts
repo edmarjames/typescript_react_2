@@ -11,3 +11,11 @@ type StakeHolder = {
 };
 
 type Guest = Omit<StakeHolder, 'name'>;
+
+export interface State {
+  count: number
+};
+
+export type CounterAction =
+  | { type: "reset" }
+  | { type: "setCount"; value: State["count"] }

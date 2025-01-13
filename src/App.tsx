@@ -6,16 +6,13 @@ import {
 
 // internal imports
 import Button                         from './components/Button';
-import { type User }                  from './utils/types';
+import {
+  type CounterAction,
+  type State,
+  type User,
+}                                     from './utils/types';
 import './App.css';
 
-interface State {
-  count: number
-};
-
-type CounterAction =
-  | { type: "reset" }
-  | { type: "setCount"; value: State["count"] }
 
 const initialState: State = { count: 0 };
 
