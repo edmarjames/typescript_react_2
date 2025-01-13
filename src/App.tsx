@@ -1,12 +1,34 @@
 // react imports
-import { useState }                    from 'react';
+import {
+  useReducer,
+  useState,
+}                                     from 'react';
 
 // internal imports
 import Button                         from './components/Button';
 import { type User }                  from './utils/types';
 import './App.css';
 
+interface State {
+  count: number
+};
 
+type CounterAction =
+  | { type: "reset" }
+  | { type: "setCount"; value: State["count"] }
+
+const initialState: State = { count: 0 };
+
+function stateReducer(state: State, action: CounterAction): State {
+  switch (action.type) {
+    case "reset":
+      return initialState;
+    case "setCount":
+      return { ...state, count: action.value };
+    default:
+      throw new Error("Unknown action");
+  }
+};
 
 function App() {
 
@@ -17,6 +39,11 @@ function App() {
   const [user, setUser] = useState<User | null>(null);
 
   const name = user?.name;
+
+  const [state, dispatch] = useReducer(stateReducer, initialState);
+
+  const addFive = () => dispatch({ type: "setCount", value: state.count + 5 });
+  const reset = () => dispatch({ type: "reset" });
 
   return (
     <>
@@ -33,6 +60,10 @@ function App() {
         Click me!
       </Button>
       <p>{count}</p>
+
+      <p>Count: {state.count}</p>
+      <button onClick={addFive}>Add 5</button>
+      <button onClick={reset}>Reset</button>
     </>
   )
 }
