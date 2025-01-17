@@ -7,6 +7,7 @@ import {
 // internal imports
 import Button                         from './components/Button';
 import Navbar                         from './components/Navbar';
+import CartContainer                  from './components/CartContainer';
 import {
   type CounterAction,
   type State,
@@ -46,6 +47,7 @@ function App() {
   return (
     <>
       <Navbar/>
+      <CartContainer/>
       <p></p>
       <Button
         backgroundColor='blue'
