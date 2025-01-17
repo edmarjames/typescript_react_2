@@ -19,3 +19,11 @@ export interface State {
 export type CounterAction =
   | { type: "reset" }
   | { type: "setCount"; value: State["count"] }
+
+export interface CartItems {
+  id: string;
+  title: string;
+  price: string;
+  img: string;
+  amount: number
+}
