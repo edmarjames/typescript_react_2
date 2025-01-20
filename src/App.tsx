@@ -1,5 +1,6 @@
 // react imports
 import {
+  useEffect,
   useReducer,
   useState,
 }                                     from 'react';
@@ -14,6 +15,9 @@ import {
   type User,
 }                                     from './utils/types';
 import './App.css';
+
+import { useDispatch, useSelector } from 'react-redux';
+import { calculateTotal } from './features/cart/cartSlice';
 
 
 const initialState: State = { count: 0 };
@@ -43,6 +47,13 @@ function App() {
 
   const addFive = () => dispatch({ type: "setCount", value: state.count + 5 });
   const reset = () => dispatch({ type: "reset" });
+
+  const { cartItems } = useSelector((store) => store.cart);
+  const reduxDispatch = useDispatch();
+
+  useEffect(() => {
+    reduxDispatch(calculateTotal());
+  }, [cartItems]);
 
   return (
     <>
