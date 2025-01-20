@@ -9,6 +9,7 @@ import {
 import Button                         from './components/Button';
 import Navbar                         from './components/Navbar';
 import CartContainer                  from './components/CartContainer';
+import Modal                          from './components/Modal';
 import {
   type CounterAction,
   type State,
@@ -57,6 +58,7 @@ function App() {
 
   return (
     <>
+      <Modal/>
       <Navbar/>
       <CartContainer/>
       <p></p>
