@@ -1,6 +1,7 @@
 import React from 'react'
 import { useDispatch } from 'react-redux';
 import { clearCart } from '../features/cart/cartSlice';
+import { closeModal } from '../features/modal/modalSlice';
 
 
 export default function Modal() {
@@ -17,7 +18,7 @@ export default function Modal() {
             className='btn confirm-btn'
             onClick={() => {
               dispatch(clearCart());
-              // dispatch(closeModal());
+              dispatch(closeModal());
             }}
           >
             confirm
@@ -25,9 +26,9 @@ export default function Modal() {
           <button
             type='button'
             className='btn clear-btn'
-            // onClick={() => {
-            //   dispatch(closeModal());
-            // }}
+            onClick={() => {
+              dispatch(closeModal());
+            }}
           >
             cancel
           </button>
@@ -35,4 +36,4 @@ export default function Modal() {
       </div>
     </aside>
   )
-}
+};

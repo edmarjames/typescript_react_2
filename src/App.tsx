@@ -50,6 +50,8 @@ function App() {
   const reset = () => dispatch({ type: "reset" });
 
   const { cartItems } = useSelector((store) => store.cart);
+  const { isOpen } = useSelector((store) => store.modal);
+
   const reduxDispatch = useDispatch();
 
   useEffect(() => {
@@ -58,7 +60,7 @@ function App() {
 
   return (
     <>
-      <Modal/>
+      {isOpen && <Modal/>}
       <Navbar/>
       <CartContainer/>
       <p></p>
