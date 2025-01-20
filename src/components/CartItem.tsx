@@ -1,6 +1,6 @@
 import React from 'react'
 import { type CartItems as CartItemProps } from "../utils/types";
-import { removeItem, increase } from '../features/cart/cartSlice';
+import { removeItem, increase, decrease } from '../features/cart/cartSlice';
 
 import { useDispatch } from 'react-redux';
 
@@ -20,7 +20,7 @@ export default function CartItem({ id, img, title, price, amount}: CartItemProps
       <div>
         <button className='amount-btn' onClick={() => dispatch(increase({id}))}>Up</button>
         <p className='amount'>{amount}</p>
-        <button className='amount-btn'>Down</button>
+        <button className='amount-btn' onClick={() => dispatch(decrease({id}))}>Down</button>
       </div>
     </article>
   )
