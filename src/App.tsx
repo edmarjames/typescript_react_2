@@ -18,7 +18,7 @@ import {
 import './App.css';
 
 import { useDispatch, useSelector } from 'react-redux';
-import { calculateTotal } from './features/cart/cartSlice';
+import { calculateTotal, getCartItems } from './features/cart/cartSlice';
 
 
 const initialState: State = { count: 0 };
@@ -49,7 +49,7 @@ function App() {
   const addFive = () => dispatch({ type: "setCount", value: state.count + 5 });
   const reset = () => dispatch({ type: "reset" });
 
-  const { cartItems } = useSelector((store) => store.cart);
+  const { cartItems, isLoading } = useSelector((store) => store.cart);
   const { isOpen } = useSelector((store) => store.modal);
 
   const reduxDispatch = useDispatch();
@@ -57,6 +57,18 @@ function App() {
   useEffect(() => {
     reduxDispatch(calculateTotal());
   }, [cartItems]);
+
+  useEffect(() => {
+    reduxDispatch(getCartItems());
+  }, []);
+
+  if (isLoading) {
+    return (
+      <div className="loading">
+        <h1>Loading...</h1>
+      </div>
+    );
+  }
 
   return (
     <>
