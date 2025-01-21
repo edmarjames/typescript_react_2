@@ -4,7 +4,7 @@ import { cartItems } from "../../utils/constants";
 const url = 'https://corsproxy.io/' + encodeURIComponent('https://course-api.com/react-useReducer-cart-project');
 
 const initialState = {
-  cartItems: cartItems,
+  cartItems: [],
   amount: 4,
   total: 0,
   isLoading: true
