@@ -59,7 +59,7 @@ function App() {
   }, [cartItems]);
 
   useEffect(() => {
-    reduxDispatch(getCartItems());
+    reduxDispatch(getCartItems('Edmar'));
   }, []);
 
   if (isLoading) {
