@@ -3,34 +3,41 @@ import {
   useEffect,
   useReducer,
   useState,
-}                                     from 'react';
+}                                      from 'react';
+
+// external imports
+import {
+  useDispatch,
+  useSelector
+}                                      from 'react-redux';
 
 // internal imports
-import Button                         from './components/Button';
-import Navbar                         from './components/Navbar';
-import CartContainer                  from './components/CartContainer';
-import Modal                          from './components/Modal';
+import Button                          from './components/Button';
+import Navbar                          from './components/Navbar';
+import CartContainer                   from './components/CartContainer';
+import Modal                           from './components/Modal';
 import {
   type CounterAction,
   type State,
   type User,
-}                                     from './utils/types';
+}                                      from './utils/types';
 import './App.css';
-
-import { useDispatch, useSelector } from 'react-redux';
-import { calculateTotal, getCartItems } from './features/cart/cartSlice';
+import {
+  calculateTotal,
+  getCartItems
+}                                      from './features/cart/cartSlice';
 
 
 const initialState: State = { count: 0 };
 
 function stateReducer(state: State, action: CounterAction): State {
   switch (action.type) {
-    case "reset":
+    case 'reset':
       return initialState;
-    case "setCount":
+    case 'setCount':
       return { ...state, count: action.value };
     default:
-      throw new Error("Unknown action");
+      throw new Error('Unknown action');
   }
 };
 
@@ -45,13 +52,11 @@ function App() {
   const name = user?.name;
 
   const [state, dispatch] = useReducer(stateReducer, initialState);
-
-  const addFive = () => dispatch({ type: "setCount", value: state.count + 5 });
-  const reset = () => dispatch({ type: "reset" });
+  const addFive = () => dispatch({ type: 'setCount', value: state.count + 5 });
+  const reset = () => dispatch({ type: 'reset' });
 
   const { cartItems, isLoading } = useSelector((store) => store.cart);
   const { isOpen } = useSelector((store) => store.modal);
-
   const reduxDispatch = useDispatch();
 
   useEffect(() => {
@@ -64,11 +69,11 @@ function App() {
 
   if (isLoading) {
     return (
-      <div className="loading">
+      <div className='loading'>
         <h1>Loading...</h1>
       </div>
     );
-  }
+  };
 
   return (
     <>

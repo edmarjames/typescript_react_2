@@ -1,6 +1,10 @@
-import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import { openModal } from "../modal/modalSlice";
-import axios from "axios";
+// external imports
+import {
+  createSlice,
+  createAsyncThunk
+}                                      from '@reduxjs/toolkit';
+import axios                           from 'axios';
+
 
 const url = 'https://corsproxy.io/' + encodeURIComponent('https://course-api.com/react-useReducer-cart-project');
 

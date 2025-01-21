@@ -1,10 +1,16 @@
-import React from 'react'
-import CartItem from './CartItem'
+// react imports
+import React                           from 'react';
 
-import { clearCart } from '../features/cart/cartSlice';
-import { openModal } from '../features/modal/modalSlice';
-import { type CartItems } from "../utils/types";
-import { useDispatch, useSelector } from 'react-redux';
+// external imports
+import {
+  useDispatch,
+  useSelector
+}                                      from 'react-redux';
+
+// internal imports
+import { openModal }                   from '../features/modal/modalSlice';
+import { type CartItems }              from '../utils/types';
+import CartItem                        from './CartItem';
 
 export default function CartContainer() {
 
@@ -43,7 +49,7 @@ export default function CartContainer() {
       </div>
       <footer>
         <hr />
-        <div className="cart-total">
+        <div className='cart-total'>
           <h4>total <span>${total.toFixed(2)}</span></h4>
         </div>
         <button className='btn clear-btn' onClick={() => dispatch(openModal())}>Clear cart</button>

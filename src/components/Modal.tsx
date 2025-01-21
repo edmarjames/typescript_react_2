@@ -1,7 +1,12 @@
-import React from 'react'
-import { useDispatch } from 'react-redux';
-import { clearCart } from '../features/cart/cartSlice';
-import { closeModal } from '../features/modal/modalSlice';
+// react imports
+import React                           from 'react';
+
+// external imports
+import { useDispatch }                 from 'react-redux';
+
+// internal imports
+import { clearCart }                   from '../features/cart/cartSlice';
+import { closeModal }                  from '../features/modal/modalSlice';
 
 
 export default function Modal() {

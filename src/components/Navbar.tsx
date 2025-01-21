@@ -1,10 +1,13 @@
-import React from 'react';
-import { useSelector } from 'react-redux';
+// react imports
+import React                           from 'react';
+
+// external imports
+import { useSelector }                 from 'react-redux';
+
 
 export default function Navbar() {
 
   const { amount } = useSelector((store) => store.cart);
-  // console.log(useSelector((store) => console.log(store)));
 
   return (
     <>
@@ -20,4 +23,4 @@ export default function Navbar() {
       </nav>
     </>
   )
-}
+};

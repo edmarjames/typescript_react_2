@@ -1,8 +1,18 @@
-import React from 'react'
-import { type CartItems as CartItemProps } from "../utils/types";
-import { removeItem, increase, decrease } from '../features/cart/cartSlice';
+// react imports
+import React                           from 'react';
 
-import { useDispatch } from 'react-redux';
+// external imports
+import { useDispatch }                 from 'react-redux';
+
+// internal imports
+import {
+  type CartItems as CartItemProps
+}                                      from '../utils/types';
+import {
+  removeItem,
+  increase,
+  decrease
+}                                      from '../features/cart/cartSlice';
 
 
 export default function CartItem({ id, img, title, price, amount}: CartItemProps) {
@@ -16,13 +26,12 @@ export default function CartItem({ id, img, title, price, amount}: CartItemProps
     dispatch(decrease({ id }));
   };
 
-
   return (
     <article className='cart-item'>
       <img src={img} alt={title} />
       <div>
         <h4>{title}</h4>
-        <h4 className="item-price">${price}</h4>
+        <h4 className='item-price'>${price}</h4>
         <button className='remove-btn' onClick={() => dispatch(removeItem(id))}>remove</button>
       </div>
       <div>
@@ -32,4 +41,4 @@ export default function CartItem({ id, img, title, price, amount}: CartItemProps
       </div>
     </article>
   )
-}
+};
