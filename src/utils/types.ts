@@ -34,3 +34,7 @@ export interface CartInitialState {
   total: number;
   isLoading: Boolean;
 }
+
+export interface ModalInitialState {
+  isOpen: boolean;
+};
