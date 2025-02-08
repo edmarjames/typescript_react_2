@@ -1,13 +1,12 @@
 // react imports
 import React                           from 'react';
 
-// external imports
-import { useDispatch }                 from 'react-redux';
 
 // internal imports
 import {
   type CartItems as CartItemProps
 }                                      from '../utils/types';
+import { useAppDispatch }              from '../app/hooks';
 import {
   removeItem,
   increase,
@@ -17,7 +16,7 @@ import {
 
 export default function CartItem({ id, img, title, price, amount}: CartItemProps) {
 
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
   const handleDecrease = () => {
     if (amount === 1) {
       dispatch(removeItem(id));

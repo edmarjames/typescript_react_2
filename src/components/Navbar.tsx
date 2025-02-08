@@ -1,13 +1,13 @@
 // react imports
 import React                           from 'react';
 
-// external imports
-import { useSelector }                 from 'react-redux';
+// internal imports
+import { useAppSelector }              from '../app/hooks';
 
 
 export default function Navbar() {
 
-  const { amount } = useSelector((store) => store.cart);
+  const { amount } = useAppSelector((store) => store.cart);
 
   return (
     <>

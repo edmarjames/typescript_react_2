@@ -1,15 +1,13 @@
 // react imports
 import React                           from 'react';
 
-// external imports
-import {
-  useDispatch,
-  useSelector
-}                                      from 'react-redux';
-
 // internal imports
 import { openModal }                   from '../features/modal/modalSlice';
 import { type CartItems }              from '../utils/types';
+import {
+  useAppSelector,
+  useAppDispatch
+}                                      from '../app/hooks';
 import CartItem                        from './CartItem';
 
 export default function CartContainer() {
@@ -18,13 +16,9 @@ export default function CartContainer() {
     cartItems,
     total,
     amount
-  }: {
-    cartItems: CartItems,
-    total: number,
-    amount: number
-  } = useSelector((store) => store.cart);
+  } = useAppSelector((store) => store.cart);
 
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
 
   if (amount < 1) {
     return (

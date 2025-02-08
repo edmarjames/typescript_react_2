@@ -5,12 +5,6 @@ import {
   useState,
 }                                      from 'react';
 
-// external imports
-import {
-  useDispatch,
-  useSelector
-}                                      from 'react-redux';
-
 // internal imports
 import Button                          from './components/Button';
 import Navbar                          from './components/Navbar';
@@ -21,11 +15,15 @@ import {
   type State,
   type User,
 }                                      from './utils/types';
-import './App.css';
+import {
+  useAppDispatch,
+  useAppSelector,
+}                                      from './app/hooks';
 import {
   calculateTotal,
   getCartItems
 }                                      from './features/cart/cartSlice';
+import './App.css';
 
 
 const initialState: State = { count: 0 };
@@ -55,9 +53,9 @@ function App() {
   const addFive = () => dispatch({ type: 'setCount', value: state.count + 5 });
   const reset = () => dispatch({ type: 'reset' });
 
-  const { cartItems, isLoading } = useSelector((store) => store.cart);
-  const { isOpen } = useSelector((store) => store.modal);
-  const reduxDispatch = useDispatch();
+  const { cartItems, isLoading } = useAppSelector((store) => store.cart);
+  const { isOpen } = useAppSelector((store) => store.modal);
+  const reduxDispatch = useAppDispatch();
 
   useEffect(() => {
     reduxDispatch(calculateTotal());
