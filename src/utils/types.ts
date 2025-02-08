@@ -27,3 +27,10 @@ export interface CartItems {
   img: string;
   amount: number
 }
+
+export interface CartInitialState {
+  cartItems: CartItems[];
+  amount: number;
+  total: number;
+  isLoading: Boolean;
+}

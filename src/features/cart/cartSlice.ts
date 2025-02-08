@@ -6,10 +6,13 @@ import {
 }                                      from '@reduxjs/toolkit';
 import axios                           from 'axios';
 
+import { type CartInitialState }       from '../../utils/types';
+
 
 const url = 'https://corsproxy.io/' + encodeURIComponent('https://course-api.com/react-useReducer-cart-project');
 
-const initialState = {
+
+const initialState: CartInitialState = {
   cartItems: [],
   amount: 4,
   total: 0,
