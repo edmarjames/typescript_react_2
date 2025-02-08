@@ -1,7 +1,8 @@
 // external imports
 import {
   createSlice,
-  createAsyncThunk
+  createAsyncThunk,
+  PayloadAction
 }                                      from '@reduxjs/toolkit';
 import axios                           from 'axios';
 
@@ -44,7 +45,7 @@ const cartSlice = createSlice({
     clearCart: (state) => {
       state.cartItems = [];
     },
-    removeItem: (state, action) => {
+    removeItem: (state, action: PayloadAction<string>) => {
       const itemId: string = action.payload;
       state.cartItems = state.cartItems.filter((item) => item.id !== itemId);
     },
