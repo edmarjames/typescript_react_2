@@ -7,9 +7,10 @@ import {
 
 // internal imports
 import Button                          from './components/Button';
-import Navbar                          from './components/Navbar';
 import CartContainer                   from './components/CartContainer';
+import Main                            from './components/Main';
 import Modal                           from './components/Modal';
+import Navbar                          from './components/Navbar';
 import {
   type CounterAction,
   type State,
@@ -74,7 +75,7 @@ function App() {
 
   return (
     <>
-      {isOpen && <Modal/>}
+      {/* {isOpen && <Modal/>}
       <Navbar/>
       <CartContainer/>
       <p></p>
@@ -94,7 +95,8 @@ function App() {
 
       <p>Count: {state.count}</p>
       <button onClick={addFive}>Add 5</button>
-      <button onClick={reset}>Reset</button>
+      <button onClick={reset}>Reset</button> */}
+      <Main/>
     </>
   )
 }
