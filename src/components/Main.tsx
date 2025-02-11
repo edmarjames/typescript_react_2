@@ -9,7 +9,7 @@ export default function Main() {
         <div>
           <nav>
             <div>
-              <h1 className='font-bold uppercase text-3xl'>
+              <h1 className='font-bold uppercase text-3xl p-4 border-b border-gray-200'>
                 <a href="/">Food Ninja</a>
               </h1>
             </div>
@@ -34,7 +34,7 @@ export default function Main() {
         </div>
       </div>
 
-      <main>
+      <main className='px-16 py-6'>
         <div>
           <a href="#">Log in</a>
           <a href="#">Sign up</a>
@@ -46,8 +46,8 @@ export default function Main() {
         </header>
 
         <div>
-          <h4 className='font-bold'>Latest Recipes</h4>
-          <div>
+          <h4 className='font-bold mt-12 pb-2 border-b border-gray-300'>Latest Recipes</h4>
+          <div className='mt-8'>
             {/* Cards go here */}
             <div>
               <img src={Stew} alt="stew" />
@@ -58,8 +58,8 @@ export default function Main() {
             </div>
           </div>
 
-          <h4 className='font-bold'>Most Popular</h4>
-          <div>
+          <h4 className='font-bold mt-12 pb-2 border-b border-gray-300'>Most Popular</h4>
+          <div className='mt-8'>
             {/* Cards go here */}
           </div>
 
