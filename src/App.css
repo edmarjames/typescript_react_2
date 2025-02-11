@@ -3,7 +3,6 @@
 Variables
 ===============
 */
-@import "tailwindcss";
 
 :root {
   --clr-primary: #645cff;

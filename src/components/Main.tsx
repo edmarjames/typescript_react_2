@@ -4,27 +4,27 @@ import Stew                            from '../assets/stew.jpg';
 export default function Main() {
 
   return (
-    <>
+    <div className='text-gray-600'>
       <div>
         <div>
           <nav>
             <div>
-              <h1>
+              <h1 className='font-bold uppercase text-3xl'>
                 <a href="/">Food Ninja</a>
               </h1>
             </div>
             <ul>
-              <li>
+              <li className='text-gray-700'>
                 <a href="#">
                   <span>Home</span>
                 </a>
               </li>
-              <li>
+              <li className='text-gray-700'>
                 <a href="#">
                   <span>About</span>
                 </a>
               </li>
-              <li>
+              <li className='text-gray-700'>
                 <a href="#">
                   <span>Contact</span>
                 </a>
@@ -41,12 +41,12 @@ export default function Main() {
         </div>
 
         <header>
-          <h2>Recipes</h2>
-          <h3>For Ninjas</h3>
+          <h2 className='text-gray-800 text-xl font-semibold'>Recipes</h2>
+          <h3 className='text-gray-800 text-xl font-semibold'>For Ninjas</h3>
         </header>
 
         <div>
-          <h4>Latest Recipes</h4>
+          <h4 className='font-bold'>Latest Recipes</h4>
           <div>
             {/* Cards go here */}
             <div>
@@ -58,7 +58,7 @@ export default function Main() {
             </div>
           </div>
 
-          <h4>Most Popular</h4>
+          <h4 className='font-bold'>Most Popular</h4>
           <div>
             {/* Cards go here */}
           </div>
@@ -68,6 +68,6 @@ export default function Main() {
           </div>
         </div>
       </main>
-    </>
+    </div>
   )
 };
