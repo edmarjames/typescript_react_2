@@ -23,7 +23,6 @@ import {
   calculateTotal,
   getCartItems
 }                                      from './features/cart/cartSlice';
-import './App.css';
 
 
 const initialState: State = { count: 0 };
