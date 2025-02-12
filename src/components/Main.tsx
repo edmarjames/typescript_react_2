@@ -10,7 +10,7 @@ export default function Main() {
           <nav>
             <div>
               <h1 className='font-bold uppercase text-3xl p-4 border-b border-gray-200'>
-                <a href="/">Food Ninja</a>
+                <a href="/" className='text-green-500 sm:text-red-500 md:text-purple-500 lg:text-blue-500 xl:text-amber-500'>Food Ninja</a>
               </h1>
             </div>
             <ul>
@@ -35,7 +35,7 @@ export default function Main() {
       </div>
 
       <main className='px-16 py-6'>
-        <div className='flex justify-between mb-1'>
+        <div className='flex gap-1 justify-start md:justify-between mb-1'>
           <a href="#">Log in</a>
           <a href="#">Sign up</a>
         </div>
