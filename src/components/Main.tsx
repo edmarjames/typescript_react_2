@@ -1,5 +1,7 @@
 import React                           from 'react';
 import Stew                            from '../assets/stew.jpg';
+import Noodles                         from '../assets/noodles.jpg';
+import Curry                           from '../assets/curry.jpg';
 
 export default function Main() {
 
@@ -55,13 +57,33 @@ export default function Main() {
           <h4 className='font-bold mt-12 pb-2 border-b border-gray-300'>Latest Recipes</h4>
           <div className='mt-8'>
             {/* Cards go here */}
-            <div className='bg-white rounded overflow-hidden shadow-md relative'>
+            <div className='card'>
               <img className='w-full h-32 sm:h-48 object-cover' src={Stew} alt="stew" />
               <div className='m-4'>
                 <span className='font-bold'>5 Bean Chilli Stew</span>
                 <span className='text-gray-500 text-sm block'>Recipe by Mario</span>
               </div>
-              <div className='bg-green-300 text-gray-800 text-xs uppercase font-bold rounded-full p-2 absolute top-2 left-2'>
+              <div className='badge'>
+                <span>25 mins</span>
+              </div>
+            </div>
+            <div className='card'>
+              <img className='w-full h-32 sm:h-48 object-cover' src={Noodles} alt="noodles" />
+              <div className='m-4'>
+                <span className='font-bold'>Vegetable Noodles</span>
+                <span className='text-gray-500 text-sm block'>Recipe by Mario</span>
+              </div>
+              <div className='badge'>
+                <span>25 mins</span>
+              </div>
+            </div>
+            <div className='card'>
+              <img className='w-full h-32 sm:h-48 object-cover' src={Curry} alt="curry" />
+              <div className='m-4'>
+                <span className='font-bold'>Tofu Curry</span>
+                <span className='text-gray-500 text-sm block'>Recipe by Mario</span>
+              </div>
+              <div className='badge'>
                 <span>25 mins</span>
               </div>
             </div>
