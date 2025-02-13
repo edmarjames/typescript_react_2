@@ -55,11 +55,14 @@ export default function Main() {
           <h4 className='font-bold mt-12 pb-2 border-b border-gray-300'>Latest Recipes</h4>
           <div className='mt-8'>
             {/* Cards go here */}
-            <div className='bg-white rounded overflow-hidden shadow-md'>
+            <div className='bg-white rounded overflow-hidden shadow-md relative'>
               <img className='w-full h-32 sm:h-48 object-cover' src={Stew} alt="stew" />
               <div className='m-4'>
                 <span className='font-bold'>5 Bean Chilli Stew</span>
                 <span className='text-gray-500 text-sm block'>Recipe by Mario</span>
+              </div>
+              <div className='bg-green-300 text-gray-800 text-xs uppercase font-bold rounded-full p-2 absolute top-2 left-2'>
+                <span>25 mins</span>
               </div>
             </div>
           </div>
