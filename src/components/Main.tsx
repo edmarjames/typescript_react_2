@@ -6,8 +6,8 @@ import Curry                           from '../assets/curry.jpg';
 export default function Main() {
 
   return (
-    <div className='text-gray-600'>
-      <div>
+    <div className='text-gray-600 grid md:grid-cols-3'>
+      <div className='md:col-span-1'>
         <div>
           <nav>
             <div>
@@ -36,7 +36,7 @@ export default function Main() {
         </div>
       </div>
 
-      <main className='px-16 py-6 bg-gray-100'>
+      <main className='px-16 py-6 bg-gray-100 md:col-span-2'>
         <div className='flex gap-1 justify-start md:justify-between mb-1'>
           <a href="#">Log in</a>
           <a href="#">Sign up</a>
@@ -55,7 +55,7 @@ export default function Main() {
 
         <div>
           <h4 className='font-bold mt-12 pb-2 border-b border-gray-300'>Latest Recipes</h4>
-          <div className='mt-8'>
+          <div className='mt-8 grid md:grid-cols-2 lg:grid-cols-3 gap-5'>
             {/* Cards go here */}
             <div className='card'>
               <img className='w-full h-32 sm:h-48 object-cover' src={Stew} alt="stew" />
