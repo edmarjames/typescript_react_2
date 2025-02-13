@@ -34,7 +34,7 @@ export default function Main() {
         </div>
       </div>
 
-      <main className='px-16 py-6'>
+      <main className='px-16 py-6 bg-gray-100'>
         <div className='flex gap-1 justify-start md:justify-between mb-1'>
           <a href="#">Log in</a>
           <a href="#">Sign up</a>
@@ -55,11 +55,11 @@ export default function Main() {
           <h4 className='font-bold mt-12 pb-2 border-b border-gray-300'>Latest Recipes</h4>
           <div className='mt-8'>
             {/* Cards go here */}
-            <div className='flex flex-col items-center gap-1'>
-              <img src={Stew} alt="stew" />
-              <div className='flex gap-40'>
-                <span>5 Bean Chilli Stew</span>
-                <span>Recipe by Mario</span>
+            <div className='bg-white rounded overflow-hidden shadow-md'>
+              <img className='w-full h-32 sm:h-48 object-cover' src={Stew} alt="stew" />
+              <div className='m-4'>
+                <span className='font-bold'>5 Bean Chilli Stew</span>
+                <span className='text-gray-500 text-sm block'>Recipe by Mario</span>
               </div>
             </div>
           </div>
