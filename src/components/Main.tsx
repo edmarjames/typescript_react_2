@@ -12,7 +12,7 @@ export default function Main() {
           <nav>
             <div>
               <h1 className='font-bold uppercase text-3xl p-4 border-b border-gray-200'>
-                <a href="/" className='text-green-500 sm:text-red-500 md:text-purple-500 lg:text-blue-500 xl:text-amber-500'>Food Ninja</a>
+                <a href="/" className='text-green-500 sm:text-red-500 md:text-purple-500 lg:text-blue-500 xl:text-amber-500 hover:text-gray-900'>Food Ninja</a>
               </h1>
             </div>
             <ul>
@@ -47,8 +47,8 @@ export default function Main() {
 
       <main className='px-16 py-6 bg-gray-100 md:col-span-2'>
         <div className='flex gap-1 justify-start md:justify-between mb-1'>
-          <a href="#" className='text-gray-800 btn border-gray-800 border-2 md:bg-blue-300 md:shadow-md md:border-0'>Log in</a>
-          <a href="#" className='text-gray-800 btn border-gray-800 border-2 md:bg-blue-300 md:shadow-md md:border-0'>Sign up</a>
+          <a href="#" className='text-gray-800 btn border-gray-800 border-2 md:bg-blue-300 md:shadow-md md:border-0 hover:opacity-50'>Log in</a>
+          <a href="#" className='text-gray-800 btn border-gray-800 border-2 md:bg-blue-300 md:shadow-md md:border-0 hover:opacity-50'>Sign up</a>
         </div>
 
         {/* <div className='flex items-end justify-center'>
@@ -113,7 +113,7 @@ export default function Main() {
           </div>
 
           <div className='flex justify-center'>
-            <div className='btn bg-gray-700 text-white shadow-md'>Load more</div>
+            <div className='btn bg-gray-700 text-white shadow-md hover:bg-white hover:text-gray-700 hover:border-gray-700 border-2'>Load more</div>
           </div>
         </div>
       </main>
