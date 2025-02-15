@@ -15,3 +15,7 @@
 .sidebar-icons {
   @apply w-5 inline-block ml-2;
 }
+
+.btn-transition {
+  @apply transition ease-out duration-500;
+}
