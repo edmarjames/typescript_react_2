@@ -1,4 +1,4 @@
-import React                           from 'react';
+import React, { useState }                           from 'react';
 import Stew                            from '../assets/stew.jpg';
 import Noodles                         from '../assets/noodles.jpg';
 import Curry                           from '../assets/curry.jpg';
@@ -10,12 +10,17 @@ export default function Main() {
       <div className='md:col-span-1 md:flex md:justify-end'>
         <div>
           <nav className='text-right'>
-            <div>
+            <div className='flex justify-between items-center'>
               <h1 className='font-bold uppercase text-3xl p-4 border-b border-gray-200'>
                 <a href="/" className='text-green-500 sm:text-red-500 md:text-purple-500 lg:text-blue-500 xl:text-amber-500 hover:text-gray-900'>Food Ninja</a>
               </h1>
+              <div className='px-4 cursor-pointer md:hidden' id='burger'>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="size-6">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                </svg>
+              </div>
             </div>
-            <ul className='text-sm mt-6'>
+            <ul className='text-sm mt-6 md:block' id='menu'>
               <li className='text-gray-700 py-1'>
                 <a href="#" className='px-4 flex justify-end border-r-4 border-red-500'>
                   <span>Home</span>
